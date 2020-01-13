@@ -1,5 +1,5 @@
 {
-    "name": "tightenco/mailthief",
+    "name": "ejunker/mailthief",
     "description": "A fake Mailer for Laravel applications that takes the pain out of testing mail.",
     "license": "MIT",
     "authors": [
@@ -9,12 +9,12 @@
         }
     ],
     "require": {
-        "illuminate/mail": "5.*",
-        "illuminate/view": "5.*"
+        "illuminate/mail": "5.*|^6",
+        "illuminate/view": "5.*|^6"
     },
     "require-dev": {
         "mockery/mockery": "^0.9.5",
-        "laravel/framework": ">=5.0 <5.5",
+        "laravel/framework": "5.*|^6",
         "phpunit/phpunit": "^5.5"
     },
     "autoload": {
