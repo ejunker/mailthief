@@ -5,8 +5,9 @@ namespace MailThief;
 use Exception;
 use Illuminate\Contracts\Mail\MailQueue;
 use Illuminate\Contracts\Mail\Mailer;
+use Illuminate\Contracts\Mail\Factory;
 
-class MailThiefFiveFiveCompatible extends MailThief implements Mailer, MailQueue
+class MailThiefFiveFiveCompatible extends MailThief implements Mailer, MailQueue, Factory
 {
     public function onQueue($queue, $view, array $data, $callback)
     {
@@ -41,5 +42,10 @@ class MailThiefFiveFiveCompatible extends MailThief implements Mailer, MailQueue
     public function bcc($users)
     {
         throw new Exception('MailThief doesn\'t support mailables');
+    }
+
+    public function mailer($name = null)
+    {
+        return app(self::class);
     }
 }
